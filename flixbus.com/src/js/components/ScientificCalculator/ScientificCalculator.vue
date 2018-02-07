@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+    <div class="header">
+      <h2>CASIO</h2>
+    </div>
     <div class="display">
       <display :display-text="displayText" />
     </div>
@@ -26,8 +29,17 @@ export default {
 
 <style scoped>
   .container {
-    width: 600px;
-    border: 1px solid #ccc;
+    margin: 50px auto;
+    width: 400px;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    background: #D2D2D6;
+    padding: 10px;
+  }
+
+  .header > h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #44454B;
   }
 </style>
 
