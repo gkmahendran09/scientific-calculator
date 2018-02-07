@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button @click="$emit('onKeypress', key)" class="keypad__btn" :class="getAdditionalClasses(key)" v-for="key in keys">{{key}}</button>
+        <button @click="$emit('onKeypress', key)" class="keypad__btn" :class="getAdditionalClasses(key)" v-for="(key, index) in keys" :key="index">{{key}}</button>
     </div>
 </template>
 <script>
