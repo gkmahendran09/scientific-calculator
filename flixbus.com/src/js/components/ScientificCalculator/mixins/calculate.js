@@ -12,7 +12,8 @@ const Calculate = {
             // Key press
             switch (key) {
             case "=":
-                this.calculate();
+            case "√":
+                this.calculate(key);
                 break;
             case "AC":
                 this.on();
@@ -48,9 +49,13 @@ const Calculate = {
             return true;
         },
 
-        // "="
-        calculate() {
-            this.displayText = eval(this.displayText);
+        // "=" || "√"
+        calculate(key) {
+            if (key == "√") {
+                this.displayText = Math.sqrt(this.displayText).toFixed(6);
+            } else {
+                this.displayText = eval(this.displayText);
+            }
         },
 
         // "C" || "AC"

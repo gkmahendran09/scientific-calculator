@@ -39,4 +39,42 @@ describe("Scientific Calculator", () => {
         expect(vm.displayText).toBe("3+");
     });
 
+    /*
+     * Basic calculations - +, -, *, /, %
+     *
+     */
+    it("Checks for Basic calcuations", () => {
+        vm.on();
+
+        // Addition
+        vm.displayText = "3+3";
+        vm.keyPressed("=");
+        expect(vm.displayText).toBe(6);
+
+        // Subtraction
+        vm.displayText = "3-3";
+        vm.keyPressed("=");
+        expect(vm.displayText).toBe(0);
+
+        // Multipilication
+        vm.displayText = "3*3";
+        vm.keyPressed("=");
+        expect(vm.displayText).toBe(9);
+
+        // Division
+        vm.displayText = "3/3";
+        vm.keyPressed("=");
+        expect(vm.displayText).toBe(1);
+
+        // Mod
+        vm.displayText = "3%3";
+        vm.keyPressed("=");
+        expect(vm.displayText).toBe(0);
+
+        // Sqrt
+        vm.displayText = "2";
+        vm.keyPressed("√");
+        expect(vm.displayText).toBe("1.414214");
+    });
+
 });
