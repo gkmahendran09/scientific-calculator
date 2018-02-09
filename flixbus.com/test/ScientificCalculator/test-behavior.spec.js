@@ -1,5 +1,5 @@
 import { mount } from "vue-test-utils";
-import ScientificCalculator from "../src/js/components/ScientificCalculator/ScientificCalculator.vue";
+import ScientificCalculator from "../../src/js/components/ScientificCalculator/ScientificCalculator.vue";
 import expect from "expect";
 
 describe("Scientific Calculator Basic Functionalities", () => {

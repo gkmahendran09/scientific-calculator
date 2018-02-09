@@ -56,10 +56,15 @@ const Calculate = {
 
         // "=" || "√"
         calculate(key) {
+            this.displayText = this.displayText.toString().replace(/([+\-*/%])(0+)/g, "$1");
             if (key == "√") {
                 this.displayText = Math.sqrt(this.displayText).toString();
             } else {
-                this.displayText = eval(this.displayText).toString();
+                try {
+                    this.displayText = eval(this.displayText).toString();
+                } catch(err) {
+                    this.displayText = "0";
+                }
             }
 
             this.isNext = true;

@@ -1,5 +1,5 @@
 import { mount } from "vue-test-utils";
-import ScientificCalculator from "../src/js/components/ScientificCalculator/ScientificCalculator.vue";
+import ScientificCalculator from "../../src/js/components/ScientificCalculator/ScientificCalculator.vue";
 import expect from "expect";
 
 describe("Scientific Calculator Calculation", () => {
@@ -17,11 +17,13 @@ describe("Scientific Calculator Calculation", () => {
         vm.on();
 
         // Addition
-        vm.keyPressed("3");
+        vm.keyPressed("1");
+        vm.keyPressed("0");
+        vm.keyPressed("0");
         vm.keyPressed("+");
-        vm.keyPressed("3");
+        vm.keyPressed("7");
         vm.keyPressed("=");
-        expect(vm.displayText).toBe("6");
+        expect(vm.displayText).toBe("107");
 
         // Subtraction
         vm.keyPressed("3");
