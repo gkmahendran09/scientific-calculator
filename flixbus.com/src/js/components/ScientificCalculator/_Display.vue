@@ -8,7 +8,7 @@ export default {
   name: "Display",  
   props: {
       displayText: {
-          type:String
+          type: [String, Number]
       }
   }
 }
