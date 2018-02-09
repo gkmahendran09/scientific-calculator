@@ -38,7 +38,7 @@ export default {
   line-height: 75px;
   font-family: "Digital-7", sans-serif;
   font-size: 75px;
-  direction: rtl;
+  text-align: right;
   letter-spacing: -2px;
   border: 2px solid #46464b;
   box-shadow: inset #000 2px 2px 2px;
