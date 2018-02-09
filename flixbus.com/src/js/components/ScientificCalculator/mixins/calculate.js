@@ -41,9 +41,9 @@ const Calculate = {
         },
 
         isValidInput(key) {
-            // if(key == "+" || key == "-" || key == "*" || key == "/") {
-            //     this.displayText.slice(-1);
-            // }
+            if(key == "+" || key == "-" || key == "*" || key == "/") {
+                return this.displayText.slice(-1) == key ? false : true;
+            }
 
             return true;
         },
