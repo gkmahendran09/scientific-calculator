@@ -2,7 +2,7 @@ import { mount } from "vue-test-utils";
 import ScientificCalculator from "../src/js/components/ScientificCalculator/ScientificCalculator.vue";
 import expect from "expect";
 
-describe("Scientific Calculator", () => {
+describe("Scientific Calculator Basic Functionalities", () => {
     let wrapper, vm;
 
     beforeEach(() => {
@@ -34,47 +34,30 @@ describe("Scientific Calculator", () => {
      */
     it("Checks the new key stroke is valid", () => {
         vm.on();
-        vm.displayText = "3+";
+        vm.keyPressed("3");
+        vm.keyPressed("+");
         vm.keyPressed("+");
         expect(vm.displayText).toBe("3+");
     });
 
     /*
-     * Basic calculations - +, -, *, /, %
-     *
+     * Basic calculator behavior
+     * 
+     * Test case - 1
+     * -------------
+     * Once the computation is completed, the next input
+     * should be considered as a new entry.
+     * Example - 3 + 3 = 6
+     * For the next input(1) it should start fresh ( should be '1' NOT '61')
      */
-    it("Checks for Basic calcuations", () => {
+    it("Should start fresh for the next computation", () => {
         vm.on();
-
-        // Addition
-        vm.displayText = "3+3";
+        vm.keyPressed("3");
+        vm.keyPressed("+");
+        vm.keyPressed("3");
         vm.keyPressed("=");
-        expect(vm.displayText).toBe(6);
-
-        // Subtraction
-        vm.displayText = "3-3";
-        vm.keyPressed("=");
-        expect(vm.displayText).toBe(0);
-
-        // Multipilication
-        vm.displayText = "3*3";
-        vm.keyPressed("=");
-        expect(vm.displayText).toBe(9);
-
-        // Division
-        vm.displayText = "3/3";
-        vm.keyPressed("=");
-        expect(vm.displayText).toBe(1);
-
-        // Mod
-        vm.displayText = "3%3";
-        vm.keyPressed("=");
-        expect(vm.displayText).toBe(0);
-
-        // Sqrt
-        vm.displayText = "2";
-        vm.keyPressed("√");
-        expect(vm.displayText).toBe("1.414214");
+        vm.keyPressed("1");
+        expect(vm.displayText).toBe("1");
     });
 
 });

@@ -28,7 +28,8 @@ export default {
     return {
       isLoading: true,
       displayText: "",
-      powerOn: false
+      powerOn: false,
+      isNext: true
     }
   },
 
