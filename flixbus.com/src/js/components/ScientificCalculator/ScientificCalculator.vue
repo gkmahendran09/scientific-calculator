@@ -40,7 +40,6 @@ export default {
       isLoading: true, // Initial page load
       displayText: "",
       powerOn: false, // calculator state "ON / OFF"
-      isNext: true, // Is ready for next computation?
       sound: false, // Sound "On / OFF"
       isSignedNumber: false, // Indicates signed property of given number '+/-'
       inMemory: false, // Indicates whether the value stored in memory

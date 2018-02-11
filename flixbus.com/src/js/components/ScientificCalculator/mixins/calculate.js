@@ -55,13 +55,12 @@ const Calculate = {
         },
 
         updateDisplayText(key) {
-            if (!this.isFreshEntry()) {
+            if (this.displayText != "0") {
                 if(this.isValidInput(key)) {
                     this.displayText += key;
                 }
             } else {
                 this.displayText = key;
-                this.isNext = false;
             }
         },
 
@@ -71,10 +70,6 @@ const Calculate = {
             }
 
             return true;
-        },
-
-        isFreshEntry() {
-            return this.displayText == "0" || this.isNext;
         },
 
         // "=" || "√"
@@ -95,13 +90,11 @@ const Calculate = {
             }
 
             this.isSignedNumber = false;
-            this.isNext = true;
         },
 
         // "C" || "AC"
         clear() {
             this.displayText = "0";
-            this.isNext = true;
         },
 
         // "AC"
