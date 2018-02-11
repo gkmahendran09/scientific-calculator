@@ -15,7 +15,7 @@
           <span class="pull-right header__right-box"></span>
         </div>
         <div class="display">
-          <display :display-text="displayText" />
+          <display :power-on="powerOn" :display-text="displayText" :is-signed-number="isSignedNumber" :in-memory="inMemory" />
         </div>
         <div class="keypad">
           <keypad @onKeypress="keyPressed" />
@@ -42,6 +42,8 @@ export default {
       powerOn: false, // calculator state "ON / OFF"
       isNext: true, // Is ready for next computation?
       sound: false, // Sound "On / OFF"
+      isSignedNumber: false, // Indicates signed property of given number '+/-'
+      inMemory: false, // Indicates whether the value stored in memory
     }
   },
 

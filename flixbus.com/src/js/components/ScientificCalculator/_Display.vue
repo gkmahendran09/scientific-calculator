@@ -1,5 +1,9 @@
 <template>
 <div class="display">
+  <span class="indicator" v-show="powerOn">
+    <span class="indicator__operator"><span v-show="inMemory">M</span></span>
+    <span class="indicator__operator"><span v-show="isSignedNumber">_</span></span>
+  </span>
   <input type="text" :value="displayText" readonly class="display__input">
 </div>
 </template>
@@ -7,8 +11,17 @@
 export default {
   name: "Display",  
   props: {
+      powerOn: {
+        type: Boolean
+      },
       displayText: {
           type: [String, Number]
+      }, 
+      isSignedNumber: {
+        type: Boolean
+      },
+      inMemory: {
+        type: Boolean
       }
   }
 }
@@ -17,6 +30,7 @@ export default {
 .display {
   width: 100%;
   background: #D6E3E3;
+  position: relative;
   
   border-radius: 5px;
 
@@ -30,6 +44,19 @@ export default {
   border-bottom-width: 20px;
 
   /* End Border */
+}
+
+.indicator {
+  position: absolute;
+  top: 12px;
+  left: 7px;
+  font-size: 9px;
+}
+
+.indicator__operator {
+  min-height: 10px;
+  text-align: center;
+  display: block;
 }
 
 .display__input {
