@@ -26,6 +26,18 @@ const Calculate = {
             case "+/-":
                 this.isSignedNumber = !this.isSignedNumber;
                 break;
+            case "M+":
+                this.addMemory();
+                break;
+            case "M-":
+                this.subtractMemory();
+                break;
+            case "MR":
+                this.readMemory();
+                break;
+            case "MC":
+                this.clearMemory();
+                break;
             case "AC":
                 this.on();
                 break;
@@ -97,6 +109,7 @@ const Calculate = {
             this.powerOn = true;
             this.sound = true;
             this.isSignedNumber = false;
+            this.clearMemory();
             this.clear();
         },
 
@@ -104,6 +117,30 @@ const Calculate = {
         off() {
             this.powerOn = false;
             this.displayText = "";
+        },
+
+
+        // Memory operations
+        // add
+        addMemory() {
+            this.memory = Number(this.memory) + Number(this.displayText);
+            this.inMemory = true;
+        },
+        // subtract
+        subtractMemory() {
+            this.memory = Number(this.memory) - Number(this.displayText);
+            this.inMemory = true;
+        },
+        // read
+        readMemory() {
+            if(this.inMemory) {
+                this.displayText = this.memory;
+            }
+        },
+        // clear
+        clearMemory() {
+            this.memory = "";
+            this.inMemory = false;
         }
     }
 };

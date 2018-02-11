@@ -44,6 +44,7 @@ export default {
       sound: false, // Sound "On / OFF"
       isSignedNumber: false, // Indicates signed property of given number '+/-'
       inMemory: false, // Indicates whether the value stored in memory
+      memory: "",
     }
   },
 
