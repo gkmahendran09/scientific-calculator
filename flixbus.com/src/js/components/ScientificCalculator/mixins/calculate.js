@@ -2,6 +2,14 @@ const Calculate = {
     methods: {
         // When key pressed
         keyPressed(key) {
+
+            // Check for sound settings
+            // and play the sound
+            if (this.powerOn && this.sound == true) {
+                // Checking for $ref to make the test pass
+                // without breaking the functionality
+                this.$refs.beep && this.$refs.beep.play();
+            }
       
             // Check if the calculator is "ON"
             // Don't perform any operation
@@ -79,6 +87,7 @@ const Calculate = {
         // "AC"
         on() {
             this.powerOn = true;
+            this.sound = true;
             this.clear();
         },
 
