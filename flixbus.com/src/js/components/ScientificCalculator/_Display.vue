@@ -43,6 +43,7 @@ export default {
   border: 2px solid #46464b;
   box-shadow: inset #000 2px 2px 2px;
   padding: 5px;
+  margin: 0; /* reset for 'Safari' */
 }
 </style>
 
