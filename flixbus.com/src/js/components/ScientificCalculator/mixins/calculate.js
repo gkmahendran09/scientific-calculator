@@ -23,6 +23,9 @@ const Calculate = {
             case "√":
                 this.calculate(key);
                 break;
+            case "+/-":
+                this.isSignedNumber = !this.isSignedNumber;
+                break;
             case "AC":
                 this.on();
                 break;
@@ -75,6 +78,11 @@ const Calculate = {
                 }
             }
 
+            if(this.isSignedNumber) {
+                this.displayText = - this.displayText;
+            }
+
+            this.isSignedNumber = false;
             this.isNext = true;
         },
 
@@ -88,6 +96,7 @@ const Calculate = {
         on() {
             this.powerOn = true;
             this.sound = true;
+            this.isSignedNumber = false;
             this.clear();
         },
 
