@@ -19,9 +19,11 @@ To watch for file changes, please run:
 
     npm run watch
 
+**Step 3**: Edit the code in `src` the output will be compiled into `dist`
+
 ## Running the tests
 
-Please run the below command to run the unit tests.
+All the tests are stored inside the `test` folder. Please run the below command to run the unit tests.
     
     npm run test
 
