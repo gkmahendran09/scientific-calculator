@@ -57,4 +57,22 @@ describe("Scientific Calculator Basic Functionalities", () => {
         expect(vm.displayText).toBe("7");
     });
 
+    /*
+     * Format the numbers
+     * 
+     */
+    it("Should format the number with , and display", () => {
+        vm.on();
+        vm.keyPressed("1");
+        vm.keyPressed("1");
+        vm.keyPressed("0");
+        vm.keyPressed("0");
+        vm.keyPressed("0");
+        vm.keyPressed("0");
+
+        setTimeout(() => { // Give some time
+            expect(vm.displayText).toBe("110,000");
+        }, 300);
+    });
+
 });

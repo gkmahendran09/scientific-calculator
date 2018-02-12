@@ -4,7 +4,7 @@
     <span class="indicator__operator"><span v-show="inMemory">M</span></span>
     <span class="indicator__operator"><span v-show="isSignedNumber">_</span></span>
   </span>
-  <input type="text" :value="displayText" readonly class="display__input">
+  <input type="text" :value="displayText | formatNumber" readonly class="display__input">
 </div>
 </template>
 <script>
@@ -23,6 +23,18 @@ export default {
       inMemory: {
         type: Boolean
       }
+  },
+  filters: {
+    formatNumber(v) {
+      let x = v.toString().split(".");
+      let x1 = x[0];
+      let x2 = x.length > 1 ? "." + x[1] : "";
+      x1 = x1.toString().replace(/([0-9\.]+)/g, (match, p1, offset, string) => {
+          return p1.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+      });
+
+      return x1 + x2;
+    }
   }
 }
 </script>
