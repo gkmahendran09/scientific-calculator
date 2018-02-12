@@ -73,6 +73,15 @@ describe("Scientific Calculator Basic Functionalities", () => {
         setTimeout(() => { // Give some time
             expect(vm.displayText).toBe("110,000");
         }, 300);
+
+        vm.keyPressed("1");
+        vm.keyPressed("2");
+        vm.keyPressed("3");
+        vm.keyPressed("4");
+        vm.keyPressed("5");
+        setTimeout(() => { // Give some time
+            expect(vm.displayText).toBe("110,000.12345");
+        }, 300);
     });
 
 });
